@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Recipes for you</title>
+</head>
+<body>
+
+<div class="container">
+    <h1>Recipes recommendation system.</h1>
+<form id="recipeForm">
+    <label for="location">Location:</label>
+    <input type="text" id="location" name="location" required>
+    <label for="time">Time for preparation:</label>
+    <select name="time" id="time">
+        <option value="quick">Quick</option>
+        <option value="medium">Medium</option>
+        <option value="elaborate">Elaborate</option>
+    </select><br>
+    <button type="submit">Get recipes</button>
+</form>
+</div>
+    
+</body>
+<script>
+    document.getElementById('recipeForm').addEventListener('submit',function(event){
+        event.preventDefault();
+        var location = document.getElementById('location').value;
+        var time = document.getElementById('time').value;
+        var message = 'Location:' + location + '<br>Time for  Preparation:' + time;
+        document.getElementById('recipeList').innerHTML = message;
+    })
+</script>
+</html>
